@@ -8,7 +8,7 @@ A Dockerfile that installs the latest a-blog cms.
 ```
 $ git clone https://github.com/atsu666/docker-acms.git
 $ cd docker-acms
-$ docker build -t acms:latest
+$ docker build -t acms:latest .
 $ docker pull mysql:latest
 ```
 
