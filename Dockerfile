@@ -13,9 +13,9 @@ RUN apt-get -y install unzip
 # Download a-blog cms
 RUN chmod 777 /var/www/html && \
     cd /var/www/html && \
-    wget http://www.a-blogcms.jp/_dev/260a/acms260a_install.zip -O acms.zip && \
+    wget http://ablogc.ms/1PPdqqC -O acms.zip && \
     unzip acms.zip && \
-    mv acms260a_install/ablogcms/* ./ && \
+    mv acms2512_install/ablogcms/* ./ && \
     mv htaccess.txt .htaccess && \
     chmod -R 777 config.server.php archives archives_rev media setup themes && \
     rm index.html && \
