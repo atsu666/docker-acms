@@ -8,7 +8,7 @@ A Dockerfile that installs the latest a-blog cms.
 ```
 $ git clone https://github.com/atsu666/docker-acms.git
 $ cd docker-acms
-$ docker build -t acms:latest .
+$ docker build --no-cache -t acms:latest .
 $ docker pull mysql:latest
 ```
 
@@ -16,5 +16,10 @@ $ docker pull mysql:latest
 
 ```
 $ docker run --name mysql-server -e MYSQL_ROOT_PASSWORD=root -d mysql
-$ docker run --name acms --link mysql-server:mysql -p 80:80 -d acms:latest
+$ docker run --name acms --link mysql-server:mysql -it -p 80:80 acms:latest /bin/bash
+
+$ docker run --name mysql-server -e MYSQL_ROOT_PASSWORD=root -d mysql
+$ docker run --name acms --link mysql-server:mysql -v /home/core/share:/var/www/html -p 80:80 acms:latest
+
+$ docker run -i -t -p 80:80 --name httpd ubuntu:latest /bin/bash
 ```
