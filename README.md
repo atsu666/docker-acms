@@ -16,10 +16,5 @@ $ docker pull mysql:latest
 
 ```
 $ docker run --name mysql-server -e MYSQL_ROOT_PASSWORD=root -d mysql
-$ docker run --name acms --link mysql-server:mysql -it -p 80:80 acms:latest /bin/bash
-
-$ docker run --name mysql-server -e MYSQL_ROOT_PASSWORD=root -d mysql
-$ docker run --name acms --link mysql-server:mysql -v /home/core/share:/var/www/html -p 80:80 acms:latest
-
-$ docker run -i -t -p 80:80 --name httpd ubuntu:latest /bin/bash
+$ docker run --name acms --link mysql-server:mysql -d -p 80:80 atsu666/acms:latest
 ```
